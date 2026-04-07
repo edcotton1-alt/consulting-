@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Inverness Consulting · Newsfeed</title>
+<meta name="description" content="A wire service of brand provocations from Ed Cotton, brand consultant. Notes from the newsletters, the investigations, and the conversations.">
+<meta name="author" content="Ed Cotton">
+
+<!-- Open Graph (LinkedIn, Slack, iMessage, Bluesky) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Inverness Consulting">
+<meta property="og:title" content="Inverness Consulting · Newsfeed">
+<meta property="og:description" content="A wire service of brand provocations from Ed Cotton. Notes from the newsletters, the investigations, and the conversations. New headlines on a continuous loop.">
+<meta property="og:url" content="https://inverness.consulting/">
+<meta property="og:image" content="https://inverness.consulting/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brand is the embedded knowledge that guides decisions — Ed Cotton, Inverness Consulting">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inverness Consulting · Newsfeed">
+<meta name="twitter:description" content="A wire service of brand provocations from Ed Cotton. New headlines on a continuous loop.">
+<meta name="twitter:image" content="https://inverness.consulting/og-image.png">
+
+<!-- Favicon (inline SVG) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23FAF6EC'/%3E%3Crect x='1' y='1' width='30' height='30' rx='3.5' fill='none' stroke='%231A1510' stroke-width='1.5'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-style='italic' font-weight='700' font-size='22' text-anchor='middle' fill='%231A1510'%3Ee%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='28' fill='%23FAF6EC'/%3E%3Crect x='6' y='6' width='168' height='168' rx='25' fill='none' stroke='%231A1510' stroke-width='8'/%3E%3Ctext x='90' y='130' font-family='Georgia,serif' font-style='italic' font-weight='700' font-size='120' text-anchor='middle' fill='%231A1510'%3Ee%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Paper tones */
+    --paper: #E8DFC8;
+    --paper-deep: #DDD2B6;
+    --paper-light: #F0E8D3;
+
+    /* Tape (slightly different shade so it sits on the paper) */
+    --tape: #DFD4B5;
+
+    /* Ink tones */
+    --ink: #1A1510;
+    --ink-mute: #5C5245;
+    --ink-faint: #8B8270;
+    --rule: #B8AE92;
+
+    --font-mono: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+    --font-display: "Big Shoulders Display", "Impact", sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* Paper grain texture */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(ellipse 60% 40% at 20% 10%, rgba(26, 21, 16, 0.025), transparent 60%),
+      radial-gradient(ellipse 50% 30% at 85% 90%, rgba(26, 21, 16, 0.02), transparent 60%);
+  }
+
+  /* Subtle fibrous paper noise */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(26, 21, 16, 0.012) 0, rgba(26, 21, 16, 0.012) 1px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(90deg, rgba(26, 21, 16, 0.008) 0, rgba(26, 21, 16, 0.008) 1px, transparent 1px, transparent 2px);
+    opacity: 0.6;
+  }
+
+  /* ========== THE TICKER TAPE ========== */
+  .tape-wrap {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+    opacity: 0;
+    animation: fadeIn 1.2s 0.2s ease-out forwards;
+  }
+
+  /* Outer guide rails (like paper feeder slots) */
+  .tape-wrap::before,
+  .tape-wrap::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+  .tape-wrap::before { top: -14px; }
+  .tape-wrap::after { bottom: -14px; }
+
+  .tape {
+    position: relative;
+    width: 100%;
+    background: var(--tape);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: clamp(90px, 13vh, 130px);
+    box-shadow:
+      0 2px 0 rgba(26, 21, 16, 0.08),
+      0 -2px 0 rgba(26, 21, 16, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* Perforation holes — live ON the scrolling track so they move in perfect sync with the text */
+  .tape-track::before,
+  .tape-track::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-image: radial-gradient(circle, var(--ink) 1.2px, transparent 1.8px);
+    background-size: 14px 8px;
+    background-repeat: repeat-x;
+    background-position: 0 center;
+    opacity: 0.5;
+    pointer-events: none;
+    width: 200%;
+  }
+  .tape-track::before { top: 0; }
+  .tape-track::after { bottom: 0; }
+
+  .tape-track {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    will-change: transform;
+    animation: scrollLeft 289s linear infinite;
+    padding: 0;
+    position: relative;
+  }
+  .tape-track.paused {
+    animation-play-state: paused !important;
+  }
+
+  .tape-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 clamp(1.5rem, 3vw, 2.5rem);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .tape-item:hover .text {
+    color: var(--ink-mute);
+  }
+
+  /* Bulletin prefix — telegraphic marker */
+  .tape-item .bullet {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+
+  .tape-item .num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+  }
+
+  .tape-item .text {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .tape-item .text em {
+    font-style: normal;
+    font-weight: 700;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 1px;
+  }
+
+  .tape-item .divider {
+    color: var(--ink-faint);
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+
+  .tape:hover .tape-track {
+    animation-play-state: paused;
+  }
+
+  /* ========== DETAIL CARD ========== */
+  .detail {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.96);
+    z-index: 50;
+    background: var(--paper-light);
+    border: 2px solid var(--ink);
+    padding: clamp(2rem, 3.5vw, 2.75rem);
+    max-width: min(640px, 92vw);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+    box-shadow: 4px 4px 0 rgba(26, 21, 16, 0.15);
+  }
+  .detail.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+  .detail-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--ink-mute);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.4rem 0.5rem;
+    line-height: 1;
+    transition: color 0.2s;
+    font-weight: 600;
+  }
+  .detail-close:hover {
+    color: var(--ink);
+  }
+  .detail-num {
+    font-size: 0.72rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .detail-text {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .detail-text em {
+    font-style: normal;
+    font-weight: 700;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 2px;
+  }
+  .detail-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .detail-source {
+    font-size: 0.82rem;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  .detail-date {
+    font-size: 0.95rem;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+
+  .detail-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(232, 223, 200, 0.75);
+    z-index: 40;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    backdrop-filter: blur(2px);
+  }
+  .detail-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ========== STUDIO LINK ========== */
+  .studio-link {
+    position: fixed;
+    bottom: clamp(1.25rem, 3vh, 2rem);
+    right: clamp(1.25rem, 3vw, 2rem);
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 0.65rem 1rem;
+    border: 1.5px solid var(--ink);
+    background: var(--paper-light);
+    transition: all 0.25s;
+    opacity: 0;
+    animation: fadeIn 1.2s 1.2s ease-out forwards;
+  }
+  .studio-link:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .studio-link .arrow {
+    transition: transform 0.25s;
+  }
+  .studio-link:hover .arrow {
+    transform: translateX(3px);
+  }
+
+  /* ========== WORDMARK ========== */
+  .wordmark {
+    position: fixed;
+    top: clamp(1.25rem, 3vh, 2rem);
+    left: clamp(1.25rem, 3vw, 2rem);
+    z-index: 20;
+    color: var(--ink);
+    opacity: 0;
+    animation: fadeIn 1.2s 1.2s ease-out forwards;
+    max-width: 70vw;
+  }
+  .masthead-rule {
+    height: 3px;
+    background: var(--ink);
+    width: 100%;
+    position: relative;
+  }
+  .masthead-rule::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5px;
+    height: 1px;
+    background: var(--ink);
+  }
+  .wordmark-row {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.6rem, 1.2vw, 1rem);
+    padding: clamp(0.6rem, 1.2vw, 1.1rem) 0 clamp(0.4rem, 0.8vw, 0.8rem);
+  }
+  .masthead-mark {
+    width: clamp(1.6rem, 3vw, 2.6rem);
+    height: clamp(1.6rem, 3vw, 2.6rem);
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+  .wordmark-text {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.2vw, 4.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 0.9;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .masthead-edition {
+    font-family: var(--font-mono);
+    font-size: clamp(0.55rem, 0.7vw, 0.7rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    text-align: center;
+    padding: 0.55rem 0 0;
+    white-space: nowrap;
+  }
+  .wordmark-sub {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: clamp(0.6rem, 0.8vw, 0.78rem);
+    font-weight: 500;
+    color: var(--ink-mute);
+    margin-top: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  @keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 600px) {
+    .tape { height: clamp(70px, 10vh, 100px); }
+    .tape-item .text { font-size: 1rem; }
+    .tape-item .bullet { font-size: 0.72rem; }
+    .detail-text { font-size: 1.05rem; }
+    .wordmark { max-width: 90vw; }
+    .wordmark-text { font-size: 1.4rem; }
+    .masthead-mark { width: 1.3rem; height: 1.3rem; }
+    .masthead-edition { font-size: 0.5rem; letter-spacing: 0.12em; }
+    .wordmark-sub { display: none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="wordmark">
+    <div class="masthead-rule"></div>
+    <div class="wordmark-row">
+      <svg class="masthead-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Tower base -->
+        <line x1="12" y1="13" x2="6" y2="22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="12" y1="13" x2="18" y2="22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9" y1="18" x2="15" y2="18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <!-- Tower peak -->
+        <circle cx="12" cy="12" r="1.6" fill="currentColor"/>
+        <!-- Broadcast arcs left -->
+        <path d="M 8 9 Q 6 12 8 15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M 5 7 Q 2 12 5 17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <!-- Broadcast arcs right -->
+        <path d="M 16 9 Q 18 12 16 15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M 19 7 Q 22 12 19 17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span class="wordmark-text">Inverness Consulting · Newsfeed</span>
+      <svg class="masthead-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="12" y1="13" x2="6" y2="22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="12" y1="13" x2="18" y2="22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9" y1="18" x2="15" y2="18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="12" cy="12" r="1.6" fill="currentColor"/>
+        <path d="M 8 9 Q 6 12 8 15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M 5 7 Q 2 12 5 17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M 16 9 Q 18 12 16 15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M 19 7 Q 22 12 19 17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="masthead-rule"></div>
+    <div class="masthead-edition">
+      Brooklyn, New York &nbsp;·&nbsp; April 2026
+    </div>
+    <div class="wordmark-sub">Ed Cotton — Brand Consultant</div>
+  </div>
+
+  <div class="tape-wrap">
+    <div class="tape">
+      <div class="tape-track" id="track"></div>
+    </div>
+  </div>
+
+  <a href="studio.html" class="studio-link">
+    Skip
+    <span class="arrow">→</span>
+  </a>
+
+  <div class="detail-overlay" id="overlay"></div>
+  <div class="detail" id="detail">
+    <button class="detail-close" id="close" aria-label="Close">✕</button>
+    <div class="detail-num" id="detail-num">№ 01</div>
+    <div class="detail-text" id="detail-text"></div>
+    <div class="detail-meta">
+      <span class="detail-source" id="detail-source"></span>
+      <span class="detail-date" id="detail-date"></span>
+    </div>
+  </div>
+
+<script>
+const PROVOCATIONS = [
+  { text: "Brand is where strategy <em>fails in public</em>", source: "The New Imperative", date: "March 2026" },
+  { text: "Optimizing yourself into <em>catastrophe</em>, one rational decision at a time", source: "Brand Coherence", date: "March 2026" },
+  { text: "Brand isn't messaging — it's the logic that <em>holds under pressure</em>", source: "The New Imperative", date: "March 2026" },
+  { text: "If AI could have written it, it's <em>no longer a strategy</em>", source: "Agency Bullshit", date: "February 2026" },
+  { text: "AI accelerates optimization and <em>takes humans out of the loop</em>", source: "The Antidote", date: "February 2026" },
+  { text: "Make the difference <em>machine-readable</em>, then protect it", source: "Marketing in an LLM Age", date: "March 2026" },
+  { text: "Hermès kept the family. The family <em>kept the brand</em>", source: "Hardwired Newsletter", date: "February 2026" },
+  { text: "IKEA built for 60 years. Can it make <em>another 140?</em>", source: "Hardwired Newsletter", date: "March 2026" },
+  { text: "MUJI took the bleach out. <em>Beige was the result</em>", source: "Hardwired Newsletter", date: "March 2026" },
+  { text: "Don't let your brand be <em>Brewdogged</em>", source: "Hardwired Newsletter", date: "March 2026" },
+  { text: "Not recession. Not recovery. A long <em>holding pattern</em>", source: "The Year of Stuck", date: "March 2026" },
+  { text: "When guidance stops, stuck becomes <em>corporate posture</em>", source: "The Year of Stuck", date: "March 2026" },
+  { text: "The customer's real question: <em>how do I make myself safer?</em>", source: "Post-Shumer Consumer", date: "February 2026" },
+  { text: "One life. Five promises. A contract <em>starting to fracture</em>", source: "Running the Ghost", date: "April 2026" },
+  { text: "The vulnerable middle <em>neither half of the K can see</em>", source: "Running the Ghost", date: "April 2026" },
+  { text: "Hermès, IKEA, MUJI, Ferrari — four systems, one <em>infrastructure move</em>", source: "Hardwired Newsletter", date: "March 2026" },
+  { text: "<em>Care</em> is what compounds", source: "The Dishoom Story", date: "February 2026" },
+  { text: "Charles Schwab does something. Do you <em>remember what?</em>", source: "Provoke Newsletter", date: "February 2026" },
+  { text: "Brand is the embedded knowledge that guides decisions <em>when no one is watching</em>", source: "Provoke Newsletter", date: "January 2026" },
+  { text: "There are many furniture retailers. There is <em>only one IKEA</em>", source: "Provoke Newsletter", date: "January 2026" },
+  { text: "The time is not wasted. The time <em>is the work</em>", source: "The Creative Resistance", date: "March 2026" },
+  { text: "Robertson spent <em>six years developing grain</em> before he'd use it in his bread", source: "The Creative Resistance", date: "March 2026" },
+  { text: "The strategy studio of the future: <em>cafe meets gallery</em>, not headphones on Zoom", source: "Provoke Newsletter", date: "March 2026" },
+  { text: "Canva built a <em>loop</em>, not a funnel", source: "Provoke Newsletter", date: "December 2025" },
+  { text: "<em>Generosity scales</em>", source: "Provoke Newsletter", date: "December 2025" },
+  { text: "People are always shocked when a company <em>actually listens</em>", source: "Provoke Newsletter", date: "December 2025" },
+  { text: "Today's free user helping a kid with homework is <em>tomorrow's Fortune 500 buyer</em>", source: "Provoke Newsletter", date: "December 2025" },
+  { text: "Canva: <em>90% of the Fortune 500</em>, built one free user at a time", source: "Provoke Newsletter", date: "December 2025" },
+  { text: "Chinese brands didn't out-price Western brands. They <em>out-understood them</em>", source: "Inspiring Futures · Falk Fuhrmann, HuíLüè", date: "April 2026" },
+  { text: "Brands shouldn't chase culture. They should <em>host it</em>", source: "Inspiring Futures · Lucinda Bounsall, Sibling Studios", date: "March 2026" },
+  { text: "Innovation in China isn't disruption. It's <em>layer upon layer upon layer</em>", source: "Inspiring Futures · Falk Fuhrmann, HuíLüè", date: "April 2026" }
+];
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function buildFeed() {
+  const shuffled = shuffle(PROVOCATIONS);
+  return shuffled.map((p, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    const idx = PROVOCATIONS.indexOf(p);
+    return `
+      <div class="tape-item" data-idx="${idx}">
+        <span class="bullet">■</span>
+        <span class="num">№ ${num}</span>
+        <span class="text">${p.text}</span>
+      </div>
+      <span class="divider">• • •</span>
+    `;
+  }).join('');
+}
+
+function populate() {
+  const track = document.getElementById('track');
+  track.innerHTML = buildFeed() + buildFeed();
+  attachClickHandlers();
+}
+
+function attachClickHandlers() {
+  const items = document.querySelectorAll('.tape-item');
+  items.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = parseInt(item.getAttribute('data-idx'));
+      const p = PROVOCATIONS[idx];
+      const num = String(idx + 1).padStart(2, '0');
+      document.getElementById('detail-num').textContent = `№ ${num}`;
+      document.getElementById('detail-text').innerHTML = p.text;
+      document.getElementById('detail-source').textContent = p.source;
+      document.getElementById('detail-date').textContent = p.date;
+      document.getElementById('detail').classList.add('active');
+      document.getElementById('overlay').classList.add('active');
+      document.getElementById('track').classList.add('paused');
+      document.querySelector('.tape').classList.add('paused');
+    });
+  });
+}
+
+function closeDetail() {
+  document.getElementById('detail').classList.remove('active');
+  document.getElementById('overlay').classList.remove('active');
+  document.getElementById('track').classList.remove('paused');
+  document.querySelector('.tape').classList.remove('paused');
+}
+
+document.getElementById('overlay').addEventListener('click', closeDetail);
+document.getElementById('close').addEventListener('click', closeDetail);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeDetail();
+});
+
+populate();
+</script>
+
+<!-- Vercel Web Analytics — page views, top pages, referrers, countries -->
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
