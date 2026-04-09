@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Inverness Consulting · The Studio</title>
+<meta name="description" content="Ed Cotton — brand consultant. Helping brands and agencies understand the future better. Twenty-seven years of practice, an active body of published thinking, and the strategy community work that holds the field together.">
+<meta name="author" content="Ed Cotton">
+
+<!-- Open Graph (LinkedIn, Slack, iMessage, Bluesky) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Inverness Consulting">
+<meta property="og:title" content="Ed Cotton · Inverness Consulting · The Studio">
+<meta property="og:description" content="Brand is the embedded knowledge that guides decisions. Twenty-seven years of practice, an active body of published thinking, and the strategy community work that holds the field together.">
+<meta property="og:url" content="https://inverness.consulting/studio.html">
+<meta property="og:image" content="https://inverness.consulting/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brand is the embedded knowledge that guides decisions — Ed Cotton, Inverness Consulting">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ed Cotton · Inverness Consulting · The Studio">
+<meta name="twitter:description" content="Brand is the embedded knowledge that guides decisions. Twenty-seven years of practice, an active body of published thinking.">
+<meta name="twitter:image" content="https://inverness.consulting/og-image.png">
+
+<!-- Favicon (inline SVG) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23FAF6EC'/%3E%3Crect x='1' y='1' width='30' height='30' rx='3.5' fill='none' stroke='%231A1510' stroke-width='1.5'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-style='italic' font-weight='700' font-size='22' text-anchor='middle' fill='%231A1510'%3Ee%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='28' fill='%23FAF6EC'/%3E%3Crect x='6' y='6' width='168' height='168' rx='25' fill='none' stroke='%231A1510' stroke-width='8'/%3E%3Ctext x='90' y='130' font-family='Georgia,serif' font-style='italic' font-weight='700' font-size='120' text-anchor='middle' fill='%231A1510'%3Ee%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500;1,9..144,600&family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF6EC;
+    --bg-deep: #F2EDDF;
+    --surface: #F4EFE0;
+    --surface-hi: #EDE7D5;
+    --ink: #1A1510;
+    --ink-mute: #5C5245;
+    --ink-faint: #8B8270;
+    --rule: #C8BFA6;
+    --rule-hi: #B8AE92;
+
+    --amber: #C8821C;
+    --amber-deep: #9A6113;
+    --acid: #2D5A3D;
+    --coral: #C24F30;
+    --cobalt: #4259C2;
+    --violet: #6A4FCC;
+    --rose: #C73D6E;
+
+    --font-display: "Fraunces", Georgia, serif;
+    --font-sans: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, monospace;
+
+    --col: min(1280px, 94vw);
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: clamp(15px, 0.95vw + 0.55rem, 17px);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    letter-spacing: -0.005em;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(26, 21, 16, 0.025), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(26, 21, 16, 0.02), transparent 60%);
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      linear-gradient(rgba(26, 21, 16, 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 21, 16, 0.018) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .page {
+    position: relative;
+    z-index: 2;
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: clamp(1.25rem, 2.5vw, 2rem) var(--gutter) 0;
+  }
+
+  /* ========== MASTHEAD ========== */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .masthead-left {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--amber);
+    text-decoration: none;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid rgba(200, 130, 28, 0.35);
+    border-radius: 3px;
+    transition: all 0.25s;
+  }
+  .back-link:hover {
+    background: rgba(200, 130, 28, 0.08);
+    border-color: var(--amber);
+  }
+  .back-link .arrow { transition: transform 0.25s; }
+  .back-link:hover .arrow { transform: translateX(-3px); }
+  .masthead-meta {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    line-height: 1.1;
+  }
+  .masthead-name {
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+  .masthead-sub {
+    color: var(--ink-mute);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+  .masthead-right { color: var(--ink-mute); text-align: right; }
+  .masthead-right .vol { color: var(--amber); }
+
+  /* ========== HERO ========== */
+  .hero {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 7vw, 6rem);
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-mute);
+    margin-bottom: 2rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--rule-hi);
+    border-radius: 3px;
+  }
+  .hero-tag .num { color: var(--amber); font-weight: 500; }
+  .hero h1 {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin-bottom: 1.75rem;
+    color: var(--ink);
+  }
+  .hero h1 .role {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--amber);
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+  }
+  .hero-lede {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    line-height: 1.55;
+    color: var(--ink-mute);
+    max-width: 46em;
+  }
+  .hero-lede strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .hero-lede .accent {
+    color: var(--amber);
+    font-weight: 500;
+  }
+
+  /* ========== SECTIONS ========== */
+  section {
+    padding: clamp(4rem, 7vw, 6.5rem) 0;
+    position: relative;
+  }
+  section + section {
+    border-top: 1px solid var(--rule);
+  }
+
+  /* Section running header — repeats author/practice at top of each section */
+  .section-runhead {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-mute);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-runhead-name {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .section-runhead-sep {
+    color: var(--ink-faint);
+    margin: 0 0.6rem;
+  }
+  .section-runhead-right {
+    color: var(--ink-faint);
+  }
+
+  .sec-header {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  }
+  .sec-icon {
+    flex-shrink: 0;
+    width: clamp(64px, 7.5vw, 88px);
+    height: clamp(64px, 7.5vw, 88px);
+  }
+  .sec-icon svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+  .sec-header-text {
+    flex: 1;
+  }
+  .sec-marker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-mute);
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--rule-hi);
+    border-radius: 3px;
+  }
+  .sec-amber .sec-marker { color: var(--amber); border-color: rgba(200, 130, 28, 0.3); }
+  .sec-cobalt .sec-marker { color: var(--cobalt); border-color: rgba(66, 89, 194, 0.3); }
+  .sec-coral .sec-marker { color: var(--coral); border-color: rgba(194, 79, 48, 0.3); }
+  .sec-violet .sec-marker { color: var(--violet); border-color: rgba(106, 79, 204, 0.3); }
+  .sec-acid .sec-marker { color: var(--acid); border-color: rgba(45, 90, 61, 0.3); }
+
+  .sec-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(2.25rem, 5vw, 4.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+  }
+  .sec-amber .sec-title em { color: var(--amber); }
+  .sec-cobalt .sec-title em { color: var(--cobalt); }
+  .sec-coral .sec-title em { color: var(--coral); }
+  .sec-violet .sec-title em { color: var(--violet); }
+  .sec-acid .sec-title em { color: var(--acid); }
+
+  .sec-deck {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    color: var(--ink-mute);
+    max-width: 44em;
+    line-height: 1.5;
+  }
+  .sec-deck em {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .sec-cobalt .sec-deck em { color: var(--cobalt); }
+  .sec-amber .sec-deck em { color: var(--amber); }
+  .sec-coral .sec-deck em { color: var(--coral); }
+  .sec-violet .sec-deck em { color: var(--violet); }
+  .sec-acid .sec-deck em { color: var(--acid); }
+
+  /* ========== CLIENT EXPERIENCE ========== */
+  .xp-era {
+    margin-bottom: clamp(3.5rem, 5vw, 4.5rem);
+    padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+    border-bottom: 1px solid var(--rule);
+  }
+  .xp-era:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .xp-era-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .xp-era-h {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 60, "SOFT" 50;
+  }
+  .xp-era-h .accent { color: var(--acid); }
+  .xp-dates {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--rule-hi);
+    border-radius: 3px;
+  }
+  .xp-frame {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    color: var(--ink-mute);
+    line-height: 1.55;
+    margin-bottom: 2.5rem;
+    max-width: 46em;
+  }
+  .xp-group {
+    margin-bottom: 2.2rem;
+  }
+  .xp-group:last-child { margin-bottom: 0; }
+  .xp-group-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--acid);
+    margin-bottom: 1rem;
+  }
+  .xp-group-note {
+    font-family: var(--font-sans);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-faint);
+    margin-bottom: 0.9rem;
+    max-width: 45em;
+  }
+  .xp-names {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 60, "SOFT" 50;
+  }
+  .xp-names .dot {
+    color: var(--acid);
+    margin: 0 0.4em;
+    font-style: normal;
+  }
+  .xp-cats {
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    margin-top: 2.5rem;
+  }
+  .xp-cats-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--acid);
+    margin-bottom: 0.9rem;
+  }
+  .xp-cats-list {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--ink-mute);
+    line-height: 1.7;
+  }
+
+  /* ========== THE WORK ========== */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .work-item {
+    background: var(--bg);
+    padding: clamp(1.75rem, 2.5vw, 2.5rem);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s;
+    position: relative;
+    min-height: 280px;
+  }
+  .work-item:hover {
+    background: var(--surface);
+  }
+  .work-item:hover .work-arrow {
+    transform: translate(4px, -4px);
+    color: var(--cobalt);
+  }
+
+  /* Outbound link below the work grid — points to LinkedIn for additional thinking */
+  .work-grid-outlink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: clamp(1.75rem, 3vw, 2.5rem);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--cobalt);
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .work-grid-outlink .arrow {
+    transition: transform 0.25s;
+  }
+  .work-grid-outlink:hover .arrow {
+    transform: translate(3px, -3px);
+  }
+  .work-grid-outlink:hover {
+    color: var(--ink);
+  }
+
+  /* Featured work card — spans both columns, larger title */
+  .work-item.work-feature {
+    grid-column: 1 / -1;
+    min-height: 0;
+    background: var(--bg);
+    padding: clamp(2.25rem, 3.5vw, 3.25rem);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .work-item.work-feature:hover {
+    background: var(--surface);
+  }
+
+  /* Wide variant — spans both columns but keeps regular card typography */
+  .work-item.work-wide {
+    grid-column: 1 / -1;
+  }
+  .work-item.work-feature .work-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: 1.1rem;
+  }
+  .work-item.work-feature .work-desc {
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    max-width: 56em;
+    flex: 0 0 auto;
+    margin-bottom: 1.25rem;
+  }
+  .work-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .work-num {
+    color: var(--cobalt);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .work-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  .work-arrow {
+    color: var(--ink-faint);
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .work-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.85rem, 2.8vw, 2.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.85rem;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+  }
+  .work-title em {
+    font-style: italic;
+    color: var(--cobalt);
+  }
+  .work-desc {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--ink-mute);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .work-tag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ========== ENGAGEMENTS ========== */
+  .eng-stack {
+    display: grid;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .eng-item {
+    background: var(--bg);
+    padding: clamp(2rem, 3vw, 3rem);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: clamp(1rem, 2.5vw, 2.5rem);
+    align-items: start;
+    transition: background 0.3s;
+    position: relative;
+  }
+  .eng-item:hover {
+    background: var(--surface);
+  }
+  .eng-icon-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .eng-icon {
+    width: 56px;
+    height: 56px;
+    overflow: visible;
+  }
+  .eng-num {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--coral);
+  }
+  .eng-h {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin-bottom: 1rem;
+    color: var(--ink);
+    font-variation-settings: "opsz" 60, "SOFT" 50;
+  }
+  .eng-h .key {
+    color: var(--coral);
+  }
+  .eng-p {
+    color: var(--ink-mute);
+    max-width: 44em;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  /* Booking CTA at the end of the engagements section */
+  .eng-cta {
+    margin-top: clamp(3rem, 5vw, 4rem);
+    padding-top: clamp(2rem, 3vw, 2.5rem);
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .eng-cta-frame {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    line-height: 1.5;
+    color: var(--ink-mute);
+    max-width: 38em;
+  }
+  .eng-cta-frame em {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--coral);
+  }
+  .eng-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--coral);
+    border: 1px solid var(--coral);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #FAF6EC;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: all 0.25s;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .eng-cta-button:hover {
+    background: transparent;
+    color: var(--coral);
+  }
+  .eng-cta-button .arrow {
+    transition: transform 0.25s;
+  }
+  .eng-cta-button:hover .arrow {
+    transform: translateX(3px);
+  }
+
+  /* ========== COMMUNITY ========== */
+  .community-frame {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    line-height: 1.55;
+    color: var(--ink-mute);
+    margin-bottom: clamp(3rem, 5vw, 4rem);
+    max-width: 48em;
+  }
+  .community-frame strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .community-frame .accent {
+    color: var(--violet);
+    font-weight: 500;
+  }
+  .community-frame a {
+    color: var(--violet);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(106, 79, 204, 0.35);
+    transition: border-color 0.2s;
+  }
+  .community-frame a:hover {
+    border-bottom-color: var(--violet);
+  }
+  .community-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .community-card {
+    background: var(--bg);
+    padding: clamp(1.75rem, 2.5vw, 2.5rem);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s;
+    position: relative;
+  }
+  .community-card:hover {
+    background: var(--surface);
+  }
+  .community-card:hover .community-card-arrow {
+    transform: translate(4px, -4px);
+    color: var(--violet);
+  }
+  .community-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+  .community-card-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--violet);
+    padding: 0.35rem 0.55rem;
+    border: 1px solid rgba(106, 79, 204, 0.3);
+    border-radius: 3px;
+    display: inline-block;
+  }
+  .community-card-arrow {
+    color: var(--ink-faint);
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .community-card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+    overflow: visible;
+  }
+  .community-card h3 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin-bottom: 0.6rem;
+    color: var(--ink);
+    font-variation-settings: "opsz" 60, "SOFT" 50;
+  }
+  .community-card h3 em {
+    color: var(--violet);
+  }
+  .community-card .meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--ink-faint);
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .community-card p {
+    color: var(--ink-mute);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    margin-top: clamp(5rem, 9vw, 7rem);
+    padding-top: clamp(3rem, 5vw, 4rem);
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--rule);
+  }
+  .footer-capture {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: end;
+    padding: clamp(2rem, 3vw, 2.5rem);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    margin-bottom: clamp(2.5rem, 4vw, 3rem);
+  }
+  .footer-capture-text h3 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin-bottom: 0;
+    color: var(--ink);
+    font-variation-settings: "opsz" 60, "SOFT" 50;
+    max-width: 32em;
+  }
+  .footer-capture-text h3 em {
+    color: var(--amber);
+  }
+  .footer-capture-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--amber);
+    border: 1px solid var(--amber);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #FAF6EC;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: all 0.25s;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .footer-capture-cta:hover {
+    background: transparent;
+    color: var(--amber);
+  }
+  .footer-capture-cta .arrow {
+    transition: transform 0.25s;
+  }
+  .footer-capture-cta:hover .arrow {
+    transform: translateX(3px);
+  }
+  .footer-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-faint);
+  }
+  .footer-meta .right { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .footer-meta a {
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+  .footer-meta a:hover {
+    color: var(--amber);
+  }
+
+  /* ========== ICON ANIMATIONS ========== */
+  /* Potter's wheel — tracking dot rotates around the wheel center */
+  .anim-wheel-spin {
+    animation: wheelSpin 6s linear infinite;
+    transform-origin: 42px 60px;
+  }
+  @keyframes wheelSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Clay transforms through three states: pile -> cylinder -> half-finished pot */
+  .clay-pile {
+    animation: clayPile 9s ease-in-out infinite;
+  }
+  .clay-cylinder {
+    animation: clayCylinder 9s ease-in-out infinite;
+    opacity: 0;
+  }
+  .clay-pot {
+    animation: clayPot 9s ease-in-out infinite;
+    opacity: 0;
+  }
+  @keyframes clayPile {
+    0%, 28%   { opacity: 1; }
+    36%, 91%  { opacity: 0; }
+    100%      { opacity: 1; }
+  }
+  @keyframes clayCylinder {
+    0%, 22%   { opacity: 0; }
+    33%, 55%  { opacity: 1; }
+    66%, 100% { opacity: 0; }
+  }
+  @keyframes clayPot {
+    0%, 58%   { opacity: 0; }
+    66%, 88%  { opacity: 1; }
+    96%, 100% { opacity: 0; }
+  }
+
+  /* Path trail markers shimmer in sequence from foreground to horizon */
+  .trail {
+    animation: trailShimmer 3s ease-in-out infinite;
+  }
+  .trail-1 { animation-delay: 0s; }
+  .trail-2 { animation-delay: 0.4s; }
+  .trail-3 { animation-delay: 0.8s; }
+  .trail-4 { animation-delay: 1.2s; }
+  @keyframes trailShimmer {
+    0%, 60%, 100% { opacity: 1; }
+    30% { opacity: 0.35; }
+  }
+
+  /* Buildings — each one bobs at a different rate */
+  .anim-bob-1 { animation: bob1 3s ease-in-out infinite; transform-origin: bottom; transform-box: fill-box; }
+  .anim-bob-2 { animation: bob2 4s ease-in-out infinite; transform-origin: bottom; transform-box: fill-box; }
+  .anim-bob-3 { animation: bob3 3.5s ease-in-out infinite; transform-origin: bottom; transform-box: fill-box; }
+  @keyframes bob1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+  @keyframes bob2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+  @keyframes bob3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+
+  /* Campfire flames — each flame flickers independently */
+  .anim-flame-1 {
+    animation: flameFlicker1 1.6s ease-in-out infinite;
+    transform-origin: 30px 60px;
+    transform-box: fill-box;
+  }
+  .anim-flame-2 {
+    animation: flameFlicker2 1.3s ease-in-out infinite;
+    transform-origin: 43px 60px;
+    transform-box: fill-box;
+  }
+  .anim-flame-3 {
+    animation: flameFlicker3 1.9s ease-in-out infinite;
+    transform-origin: 52px 60px;
+    transform-box: fill-box;
+  }
+  @keyframes flameFlicker1 {
+    0%, 100% { transform: scaleY(1) scaleX(1) translateX(0); }
+    25%      { transform: scaleY(1.08) scaleX(0.96) translateX(-0.5px); }
+    50%      { transform: scaleY(0.94) scaleX(1.04) translateX(0.5px); }
+    75%      { transform: scaleY(1.05) scaleX(0.98) translateX(-0.3px); }
+  }
+  @keyframes flameFlicker2 {
+    0%, 100% { transform: scaleY(1) scaleX(1) translateX(0); }
+    30%      { transform: scaleY(1.1) scaleX(0.95) translateX(0.4px); }
+    60%      { transform: scaleY(0.92) scaleX(1.05) translateX(-0.4px); }
+  }
+  @keyframes flameFlicker3 {
+    0%, 100% { transform: scaleY(1) scaleX(1) translateX(0); }
+    35%      { transform: scaleY(0.95) scaleX(1.04) translateX(0.6px); }
+    70%      { transform: scaleY(1.07) scaleX(0.97) translateX(-0.4px); }
+  }
+
+  /* Broken compass — jitters */
+  .anim-jitter {
+    animation: jitter 0.6s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  @keyframes jitter {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-4deg); }
+    75% { transform: rotate(4deg); }
+  }
+
+  /* Clock hands — rotate around clock center (40,40) */
+  .anim-hour {
+    animation: spinClock 20s linear infinite;
+    transform-origin: 40px 40px;
+  }
+  .anim-minute {
+    animation: spinClock 3s linear infinite;
+    transform-origin: 40px 40px;
+  }
+  @keyframes spinClock {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Knife slides horizontally along the whetstone */
+  .anim-sharpen {
+    animation: sharpen 1.1s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  @keyframes sharpen {
+    0%, 100% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+  }
+
+  /* Weather vane — arrow rotates with the wind, in gusts */
+  .anim-vane {
+    animation: vane 8s ease-in-out infinite;
+    transform-origin: 42px 38px;
+  }
+  @keyframes vane {
+    0%   { transform: rotate(-12deg); }
+    15%  { transform: rotate(-12deg); }
+    25%  { transform: rotate(8deg); }
+    40%  { transform: rotate(8deg); }
+    50%  { transform: rotate(-4deg); }
+    65%  { transform: rotate(-4deg); }
+    75%  { transform: rotate(15deg); }
+    90%  { transform: rotate(15deg); }
+    100% { transform: rotate(-12deg); }
+  }
+
+  /* Book — pulses */
+  .anim-book {
+    animation: bookPulse 2.5s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  @keyframes bookPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+  }
+
+  /* Mic — sound waves emanate */
+  .anim-mic {
+    animation: micPulse 1.8s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  @keyframes micPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 0.85; }
+  }
+
+  /* Tent — sways gently */
+  .anim-tent {
+    animation: sway 3s ease-in-out infinite;
+    transform-origin: bottom center;
+    transform-box: fill-box;
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+  }
+
+  /* Calendar — page flips */
+  .anim-calendar {
+    animation: calPulse 2.5s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  @keyframes calPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.04) rotate(1deg); }
+  }
+
+  /* Inline links in body copy */
+  .inline-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-hi);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .inline-link:hover {
+    color: var(--amber);
+    border-bottom-color: var(--amber);
+  }
+
+  /* ========== ACCESSIBILITY: REDUCED MOTION ========== */
+  /* Respect user preference for reduced motion — disable icon animations */
+  @media (prefers-reduced-motion: reduce) {
+    .anim-wheel-spin,
+    .clay-pile, .clay-cylinder, .clay-pot,
+    .anim-bob-1, .anim-bob-2, .anim-bob-3,
+    .anim-flame-1, .anim-flame-2, .anim-flame-3,
+    .anim-jitter,
+    .anim-clock-hour, .anim-clock-minute,
+    .anim-sharpen,
+    .anim-vane,
+    .anim-book,
+    .anim-mic,
+    .anim-sway,
+    .anim-cal,
+    .trail, .trail-1, .trail-2, .trail-3, .trail-4 {
+      animation: none !important;
+    }
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 860px) {
+    .work-grid { grid-template-columns: 1fr; }
+    .community-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .masthead { font-size: 0.62rem; }
+    .eng-item { grid-template-columns: 1fr; gap: 1rem; }
+    .footer-capture { grid-template-columns: 1fr; gap: 1.5rem; }
+    .footer-capture-cta { width: 100%; justify-content: center; }
+    .xp-era-head { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+    .sec-header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     RISO ICON SVG DEFINITIONS (animated)
+============================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Gradient for campfire flames: amber at base, coral at tips -->
+    <linearGradient id="flame-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#C8821C"/>
+      <stop offset="55%" stop-color="#C8651C"/>
+      <stop offset="100%" stop-color="#C24F30"/>
+    </linearGradient>
+
+    <!-- COMPASS / WORK -->
+    <symbol id="icon-wheel" viewBox="0 0 80 80">
+      <!-- Riso shadow layer for wheel and base (static) -->
+      <g transform="translate(2,2)">
+        <!-- Wheel ellipse -->
+        <ellipse cx="40" cy="58" rx="30" ry="8" fill="none" stroke="#4259C2" stroke-width="2.5" opacity="0.55"/>
+        <!-- Wheel post / stand -->
+        <line x1="34" y1="64" x2="34" y2="72" stroke="#4259C2" stroke-width="2" opacity="0.55" stroke-linecap="round"/>
+        <line x1="46" y1="64" x2="46" y2="72" stroke="#4259C2" stroke-width="2" opacity="0.55" stroke-linecap="round"/>
+      </g>
+      <!-- Dark ink wheel and base (static) -->
+      <g>
+        <ellipse cx="42" cy="60" rx="30" ry="8" fill="none" stroke="#1A1510" stroke-width="2"/>
+        <line x1="36" y1="66" x2="36" y2="74" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <line x1="48" y1="66" x2="48" y2="74" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+      </g>
+
+      <!-- STATE A: Pile of clay (low rounded mound) -->
+      <g class="clay-pile">
+        <!-- Riso shadow -->
+        <g transform="translate(2,2)">
+          <path d="M 30 56 Q 40 44 50 56 Z" fill="#4259C2" opacity="0.55"/>
+        </g>
+        <!-- Dark ink -->
+        <path d="M 32 58 Q 42 46 52 58 Z" fill="none" stroke="#1A1510" stroke-width="2" stroke-linejoin="round"/>
+      </g>
+
+      <!-- STATE B: Rough cylinder rising -->
+      <g class="clay-cylinder">
+        <!-- Riso shadow -->
+        <g transform="translate(2,2)">
+          <line x1="32" y1="56" x2="32" y2="32" stroke="#4259C2" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
+          <line x1="48" y1="56" x2="48" y2="32" stroke="#4259C2" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
+          <line x1="32" y1="32" x2="48" y2="32" stroke="#4259C2" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
+        </g>
+        <!-- Dark ink -->
+        <line x1="34" y1="58" x2="34" y2="34" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <line x1="50" y1="58" x2="50" y2="34" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="34" x2="50" y2="34" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+      </g>
+
+      <!-- STATE C: Half-finished pot with shaped neck and rim -->
+      <g class="clay-pot">
+        <!-- Riso shadow -->
+        <g transform="translate(2,2)">
+          <path d="M 30 56 Q 22 44 30 30 Q 36 22 30 14" fill="none" stroke="#4259C2" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
+          <path d="M 50 56 Q 58 44 50 30 Q 44 22 50 14" fill="none" stroke="#4259C2" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
+          <ellipse cx="40" cy="14" rx="10" ry="3" fill="none" stroke="#4259C2" stroke-width="2" opacity="0.55"/>
+        </g>
+        <!-- Dark ink -->
+        <path d="M 32 58 Q 24 46 32 32 Q 38 24 32 16" fill="none" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <path d="M 52 58 Q 60 46 52 32 Q 46 24 52 16" fill="none" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="42" cy="16" rx="10" ry="3" fill="none" stroke="#1A1510" stroke-width="1.8"/>
+      </g>
+
+      <!-- Tracking dot on wheel rim — keeps spinning regardless of clay state -->
+      <g class="anim-wheel-spin">
+        <circle cx="72" cy="60" r="2" fill="#1A1510"/>
+      </g>
+    </symbol>
+
+    <!-- HAND / WHERE I CAN HELP — waves -->
+    <symbol id="icon-walker" viewBox="0 0 80 80">
+      <!-- Riso shadow layer -->
+      <g transform="translate(2,2)">
+        <!-- Horizon line -->
+        <line x1="8" y1="42" x2="32" y2="42" stroke="#C24F30" stroke-width="2" opacity="0.55" stroke-linecap="round"/>
+        <line x1="48" y1="42" x2="72" y2="42" stroke="#C24F30" stroke-width="2" opacity="0.55" stroke-linecap="round"/>
+        <!-- Path edges (perspective: wide at bottom, narrow at horizon) -->
+        <line x1="14" y1="72" x2="34" y2="42" stroke="#C24F30" stroke-width="2" opacity="0.55" stroke-linecap="round"/>
+        <line x1="66" y1="72" x2="46" y2="42" stroke="#C24F30" stroke-width="2" opacity="0.55" stroke-linecap="round"/>
+        <!-- Trail markers along the path (wider at bottom, narrower toward horizon) -->
+        <line x1="22" y1="68" x2="58" y2="68" stroke="#C24F30" stroke-width="1.8" opacity="0.55" stroke-linecap="round"/>
+        <line x1="28" y1="60" x2="52" y2="60" stroke="#C24F30" stroke-width="1.6" opacity="0.55" stroke-linecap="round"/>
+        <line x1="32" y1="53" x2="48" y2="53" stroke="#C24F30" stroke-width="1.4" opacity="0.55" stroke-linecap="round"/>
+        <line x1="35" y1="47" x2="45" y2="47" stroke="#C24F30" stroke-width="1.2" opacity="0.55" stroke-linecap="round"/>
+      </g>
+      <!-- Dark ink layer -->
+      <g>
+        <!-- Horizon line (broken in the middle where the path meets it) -->
+        <line x1="10" y1="44" x2="34" y2="44" stroke="#1A1510" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="50" y1="44" x2="74" y2="44" stroke="#1A1510" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- Path edges (perspective: wide at bottom, narrow at horizon) -->
+        <line x1="16" y1="74" x2="36" y2="44" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <line x1="68" y1="74" x2="48" y2="44" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <!-- Trail markers along the path (animated shimmer) -->
+        <line class="trail trail-1" x1="24" y1="70" x2="60" y2="70" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <line class="trail trail-2" x1="30" y1="62" x2="54" y2="62" stroke="#1A1510" stroke-width="1.8" stroke-linecap="round"/>
+        <line class="trail trail-3" x1="34" y1="55" x2="50" y2="55" stroke="#1A1510" stroke-width="1.5" stroke-linecap="round"/>
+        <line class="trail trail-4" x1="37" y1="49" x2="47" y2="49" stroke="#1A1510" stroke-width="1.3" stroke-linecap="round"/>
+      </g>
+    </symbol>
+
+    <!-- BUILDINGS / EXPERIENCE — each bobs -->
+    <symbol id="icon-buildings" viewBox="0 0 80 80">
+      <g transform="translate(2,2)">
+        <rect x="10" y="28" width="20" height="42" fill="#2D5A3D" opacity="0.55"/>
+        <rect x="32" y="14" width="22" height="56" fill="#2D5A3D" opacity="0.55"/>
+        <rect x="56" y="34" width="18" height="36" fill="#2D5A3D" opacity="0.55"/>
+      </g>
+      <g class="anim-bob-1">
+        <rect x="12" y="30" width="20" height="42" fill="none" stroke="#1A1510" stroke-width="2"/>
+        <line x1="16" y1="38" x2="20" y2="38" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="24" y1="38" x2="28" y2="38" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="16" y1="48" x2="20" y2="48" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="24" y1="48" x2="28" y2="48" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="16" y1="58" x2="20" y2="58" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="24" y1="58" x2="28" y2="58" stroke="#1A1510" stroke-width="1.5"/>
+      </g>
+      <g class="anim-bob-2">
+        <rect x="34" y="16" width="22" height="56" fill="none" stroke="#1A1510" stroke-width="2"/>
+        <line x1="38" y1="24" x2="42" y2="24" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="46" y1="24" x2="50" y2="24" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="38" y1="34" x2="42" y2="34" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="46" y1="34" x2="50" y2="34" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="38" y1="44" x2="42" y2="44" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="46" y1="44" x2="50" y2="44" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="38" y1="54" x2="42" y2="54" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="46" y1="54" x2="50" y2="54" stroke="#1A1510" stroke-width="1.5"/>
+      </g>
+      <g class="anim-bob-3">
+        <rect x="58" y="36" width="18" height="36" fill="none" stroke="#1A1510" stroke-width="2"/>
+        <line x1="62" y1="44" x2="66" y2="44" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="68" y1="44" x2="72" y2="44" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="62" y1="54" x2="66" y2="54" stroke="#1A1510" stroke-width="1.5"/>
+        <line x1="68" y1="54" x2="72" y2="54" stroke="#1A1510" stroke-width="1.5"/>
+      </g>
+    </symbol>
+
+    <!-- PEOPLE / COMMUNITY — each head pulses -->
+    <symbol id="icon-campfire" viewBox="0 0 80 80">
+      <!-- Logs at the base (static) - dark ink primary, no separate shadow needed -->
+      <g>
+        <line x1="20" y1="64" x2="58" y2="76" stroke="#1A1510" stroke-width="3" stroke-linecap="round"/>
+        <line x1="58" y1="64" x2="20" y2="76" stroke="#1A1510" stroke-width="3" stroke-linecap="round"/>
+        <line x1="14" y1="70" x2="64" y2="70" stroke="#1A1510" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <!-- FLAME 1: left flame, smaller, leans slightly left -->
+      <g class="anim-flame-1">
+        <path d="M 26 60 C 22 50, 22 40, 28 32 C 26 38, 30 42, 30 36 C 30 28, 28 22, 31 18 C 31 26, 35 32, 34 40 C 34 48, 36 54, 32 60 Z" fill="url(#flame-gradient)" opacity="0.85"/>
+      </g>
+
+      <!-- FLAME 2: center flame, tallest, leans slightly right -->
+      <g class="anim-flame-2">
+        <path d="M 36 60 C 30 50, 32 38, 38 28 C 36 36, 42 38, 41 30 C 40 22, 42 14, 46 6 C 46 16, 50 22, 49 32 C 48 42, 52 50, 50 56 C 48 60, 42 62, 36 60 Z" fill="url(#flame-gradient)" opacity="0.85"/>
+      </g>
+
+      <!-- FLAME 3: right flame, smaller, leans slightly right -->
+      <g class="anim-flame-3">
+        <path d="M 48 60 C 44 52, 46 42, 50 34 C 48 40, 52 42, 51 36 C 51 28, 54 22, 53 16 C 56 22, 58 30, 56 38 C 56 48, 58 54, 54 60 Z" fill="url(#flame-gradient)" opacity="0.85"/>
+      </g>
+    </symbol>
+
+    <!-- BROKEN COMPASS / LOST PLOT — jitters -->
+    <symbol id="icon-broken" viewBox="0 0 80 80">
+      <g class="anim-jitter">
+        <g transform="translate(2,2)">
+          <circle cx="40" cy="40" r="28" fill="none" stroke="#C24F30" stroke-width="2.5" opacity="0.55"/>
+          <path d="M 40 18 L 46 38 L 38 42 L 32 36 Z" fill="#C24F30" opacity="0.55"/>
+          <path d="M 42 44 L 48 60 L 36 50 Z" fill="#C24F30" opacity="0.55"/>
+        </g>
+        <g>
+          <circle cx="42" cy="42" r="28" fill="none" stroke="#1A1510" stroke-width="2"/>
+          <path d="M 42 20 L 48 40 L 40 44 L 34 38 Z" fill="none" stroke="#1A1510" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M 44 46 L 50 62 L 38 52 Z" fill="none" stroke="#1A1510" stroke-width="2" stroke-linejoin="round"/>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- CLOCK / TWO WEEKS — hands spin from center -->
+    <symbol id="icon-clock" viewBox="0 0 80 80">
+      <g transform="translate(2,2)">
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#C24F30" stroke-width="2.5" opacity="0.55"/>
+      </g>
+      <g>
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#1A1510" stroke-width="2"/>
+        <line x1="40" y1="12" x2="40" y2="16" stroke="#1A1510" stroke-width="2"/>
+        <line x1="40" y1="64" x2="40" y2="68" stroke="#1A1510" stroke-width="2"/>
+        <line x1="12" y1="40" x2="16" y2="40" stroke="#1A1510" stroke-width="2"/>
+        <line x1="64" y1="40" x2="68" y2="40" stroke="#1A1510" stroke-width="2"/>
+      </g>
+      <!-- Hour hand — shorter, rotates slowly -->
+      <g class="anim-hour">
+        <line x1="40" y1="40" x2="40" y2="24" stroke="#1A1510" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <!-- Minute hand — longer, rotates fast -->
+      <g class="anim-minute">
+        <line x1="40" y1="40" x2="40" y2="18" stroke="#1A1510" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <!-- Center pin -->
+      <circle cx="40" cy="40" r="2.5" fill="#1A1510"/>
+    </symbol>
+
+    <!-- KNIFE + WHETSTONE / SHARPEN — knife moves along the stone -->
+    <symbol id="icon-sharpen" viewBox="0 0 80 80">
+      <!-- Whetstone (static) -->
+      <g transform="translate(2,2)">
+        <rect x="10" y="52" width="60" height="10" rx="2" fill="#C24F30" opacity="0.55"/>
+      </g>
+      <g>
+        <rect x="10" y="54" width="60" height="10" rx="2" fill="none" stroke="#1A1510" stroke-width="2"/>
+        <line x1="16" y1="58" x2="22" y2="58" stroke="#1A1510" stroke-width="1" opacity="0.6"/>
+        <line x1="26" y1="60" x2="32" y2="60" stroke="#1A1510" stroke-width="1" opacity="0.6"/>
+        <line x1="38" y1="58" x2="44" y2="58" stroke="#1A1510" stroke-width="1" opacity="0.6"/>
+        <line x1="48" y1="60" x2="54" y2="60" stroke="#1A1510" stroke-width="1" opacity="0.6"/>
+        <line x1="58" y1="58" x2="64" y2="58" stroke="#1A1510" stroke-width="1" opacity="0.6"/>
+      </g>
+      <!-- Knife (animated — slides back and forth) -->
+      <g class="anim-sharpen">
+        <!-- Riso shadow -->
+        <g transform="translate(1.5,1.5)">
+          <!-- Blade shadow -->
+          <polygon points="16,44 54,44 48,52 16,52" fill="#C24F30" opacity="0.55"/>
+          <!-- Handle shadow -->
+          <rect x="52" y="42" width="14" height="8" rx="1" fill="#C24F30" opacity="0.55"/>
+        </g>
+        <!-- Blade (outlined) -->
+        <polygon points="16,44 54,44 48,52 16,52" fill="none" stroke="#1A1510" stroke-width="2" stroke-linejoin="round"/>
+        <!-- Blade edge highlight -->
+        <line x1="18" y1="47" x2="46" y2="47" stroke="#1A1510" stroke-width="1" opacity="0.5"/>
+        <!-- Handle (solid) -->
+        <rect x="52" y="42" width="14" height="8" rx="1" fill="#1A1510" stroke="#1A1510" stroke-width="1.5"/>
+        <!-- Handle rivets -->
+        <circle cx="56" cy="46" r="0.8" fill="#1A1510"/>
+        <circle cx="62" cy="46" r="0.8" fill="#1A1510"/>
+      </g>
+      <!-- Spark marks where blade meets stone (static, small) -->
+      <line x1="22" y1="51" x2="20" y2="48" stroke="#1A1510" stroke-width="1" opacity="0.7"/>
+      <line x1="34" y1="51" x2="36" y2="48" stroke="#1A1510" stroke-width="1" opacity="0.7"/>
+    </symbol>
+
+    <!-- WEATHER VANE / OPPORTUNITY — arrow rotates to read the wind -->
+    <symbol id="icon-weathervane" viewBox="0 0 80 80">
+      <!-- Static shaft and base -->
+      <g>
+        <!-- Riso shadow -->
+        <g transform="translate(2,2)">
+          <!-- Vertical shaft -->
+          <line x1="40" y1="22" x2="40" y2="62" stroke="#C24F30" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
+          <!-- Mounting orb at top of shaft -->
+          <circle cx="40" cy="22" r="2.5" fill="#C24F30" opacity="0.55"/>
+          <!-- Base / mounting bracket -->
+          <path d="M 32 62 L 40 56 L 48 62 L 48 68 L 32 68 Z" fill="#C24F30" opacity="0.55"/>
+          <!-- Tripod feet -->
+          <line x1="34" y1="68" x2="30" y2="74" stroke="#C24F30" stroke-width="1.8" opacity="0.55" stroke-linecap="round"/>
+          <line x1="46" y1="68" x2="50" y2="74" stroke="#C24F30" stroke-width="1.8" opacity="0.55" stroke-linecap="round"/>
+        </g>
+        <!-- Dark ink -->
+        <line x1="42" y1="24" x2="42" y2="64" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="42" cy="24" r="2.5" fill="#1A1510"/>
+        <path d="M 34 64 L 42 58 L 50 64 L 50 70 L 34 70 Z" fill="none" stroke="#1A1510" stroke-width="2" stroke-linejoin="round"/>
+        <line x1="36" y1="70" x2="32" y2="76" stroke="#1A1510" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="48" y1="70" x2="52" y2="76" stroke="#1A1510" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+      <!-- The arrow that rotates with the wind -->
+      <g class="anim-vane">
+        <!-- Riso shadow -->
+        <g transform="translate(2,2)">
+          <!-- Arrow body: pointed head on the right, feathered tail on the left -->
+          <path d="M 18 36 L 24 36 L 24 32 L 32 36 L 24 40 L 24 36 L 18 36 M 28 36 L 60 36 L 56 32 L 64 36 L 56 40 L 60 36 Z" fill="#C24F30" opacity="0.55"/>
+          <!-- Simpler arrow shape -->
+          <line x1="20" y1="36" x2="62" y2="36" stroke="#C24F30" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
+          <!-- Feathered tail at left -->
+          <line x1="20" y1="32" x2="24" y2="36" stroke="#C24F30" stroke-width="2" opacity="0.55" stroke-linecap="round"/>
+          <line x1="20" y1="40" x2="24" y2="36" stroke="#C24F30" stroke-width="2" opacity="0.55" stroke-linecap="round"/>
+          <!-- Pointed head at right -->
+          <line x1="56" y1="30" x2="64" y2="36" stroke="#C24F30" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
+          <line x1="56" y1="42" x2="64" y2="36" stroke="#C24F30" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
+        </g>
+        <!-- Dark ink -->
+        <line x1="22" y1="38" x2="64" y2="38" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <line x1="22" y1="34" x2="26" y2="38" stroke="#1A1510" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="22" y1="42" x2="26" y2="38" stroke="#1A1510" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="58" y1="32" x2="66" y2="38" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+        <line x1="58" y1="44" x2="66" y2="38" stroke="#1A1510" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </symbol>
+
+    <!-- BOOK — pulses gently -->
+    <symbol id="icon-book" viewBox="0 0 24 24">
+      <g class="anim-book">
+        <g transform="translate(0.6,0.6)">
+          <path d="M 4 5 L 4 19 L 12 17 L 20 19 L 20 5 L 12 7 Z" fill="#4259C2" opacity="0.55"/>
+        </g>
+        <g>
+          <path d="M 4 5 L 4 19 L 12 17 L 20 19 L 20 5 L 12 7 Z" fill="none" stroke="#1A1510" stroke-width="1.3" stroke-linejoin="round"/>
+          <line x1="12" y1="7" x2="12" y2="17" stroke="#1A1510" stroke-width="1.3"/>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- MIC — pulses (sound waves) -->
+    <symbol id="icon-mic" viewBox="0 0 24 24">
+      <g class="anim-mic">
+        <g transform="translate(0.6,0.6)">
+          <rect x="9" y="3" width="6" height="11" rx="3" fill="#4259C2" opacity="0.55"/>
+          <path d="M 6 12 Q 6 17 12 17 Q 18 17 18 12" fill="none" stroke="#4259C2" stroke-width="1.5" opacity="0.55"/>
+          <line x1="12" y1="17" x2="12" y2="21" stroke="#4259C2" stroke-width="1.5" opacity="0.55"/>
+        </g>
+        <g>
+          <rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="#1A1510" stroke-width="1.3"/>
+          <path d="M 6 12 Q 6 17 12 17 Q 18 17 18 12" fill="none" stroke="#1A1510" stroke-width="1.3"/>
+          <line x1="12" y1="17" x2="12" y2="21" stroke="#1A1510" stroke-width="1.3"/>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- TENT / CAMP THRIVE — sways -->
+    <symbol id="icon-tent" viewBox="0 0 40 40">
+      <g class="anim-tent">
+        <g transform="translate(1,1)">
+          <path d="M 6 32 L 20 6 L 34 32 Z" fill="#6A4FCC" opacity="0.55"/>
+          <path d="M 16 32 L 20 22 L 24 32 Z" fill="#1A1510" opacity="0.55"/>
+        </g>
+        <g>
+          <path d="M 6 32 L 20 6 L 34 32 Z" fill="none" stroke="#1A1510" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M 16 32 L 20 22 L 24 32" fill="none" stroke="#1A1510" stroke-width="1.4"/>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- CALENDAR / STRATMONDAY — pulses -->
+    <symbol id="icon-calendar" viewBox="0 0 40 40">
+      <g class="anim-calendar">
+        <g transform="translate(1,1)">
+          <rect x="6" y="8" width="28" height="26" rx="2" fill="#6A4FCC" opacity="0.55"/>
+        </g>
+        <g>
+          <rect x="6" y="8" width="28" height="26" rx="2" fill="none" stroke="#1A1510" stroke-width="1.6"/>
+          <line x1="6" y1="16" x2="34" y2="16" stroke="#1A1510" stroke-width="1.6"/>
+          <line x1="13" y1="5" x2="13" y2="11" stroke="#1A1510" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="27" y1="5" x2="27" y2="11" stroke="#1A1510" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="13" cy="22" r="1.5" fill="#1A1510"/>
+          <circle cx="20" cy="22" r="1.5" fill="#1A1510"/>
+          <circle cx="27" cy="22" r="1.5" fill="#1A1510"/>
+          <circle cx="13" cy="28" r="1.5" fill="#1A1510"/>
+          <circle cx="20" cy="28" r="1.5" fill="#1A1510"/>
+        </g>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="page">
+
+  <!-- ========== MASTHEAD ========== -->
+  <header class="masthead">
+    <div class="masthead-left">
+      <a href="index.html" class="back-link">
+        <span class="arrow">←</span>
+        Back to the wire
+      </a>
+      <span class="masthead-meta">
+        <span class="masthead-name">Ed Cotton</span>
+        <span class="masthead-sub">Inverness Consulting · Brand Consultant</span>
+      </span>
+    </div>
+    <div class="masthead-right">
+      The Studio &nbsp;/&nbsp; <span class="vol">Vol. I — 2026</span>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-tag">
+      <span class="num">§ 01</span>
+      The Practice
+    </div>
+    <h1>Brand is the embedded knowledge that <span class="role">guides decisions.</span></h1>
+    <p class="hero-lede">
+      I help <strong>brands and agencies</strong> to understand the future better. Seven years independent, working with brands and organizations that include <strong>Walmart, Amazon, LEGO, INEOS, PepsiCo, Pinterest, EA, Mars Petcare, BlackRock, Fujifilm</strong>, and the agencies that serve them. Twenty years before that as <span class="accent">CSO and Partner at BSSP</span>, the independent agency Adweek named Agency of the Decade. Alongside the work, I <strong>write, publish, and convene</strong>.
+    </p>
+  </section>
+
+  <!-- ========== CLIENT EXPERIENCE ========== -->
+  <section class="sec-acid" id="experience">
+    <div class="section-runhead">
+      <span><span class="section-runhead-name">Ed Cotton</span><span class="section-runhead-sep">·</span>Inverness Consulting</span>
+      <span class="section-runhead-right">§ 02</span>
+    </div>
+    <div class="sec-header">
+      <div class="sec-icon">
+        <svg><use href="#icon-buildings"/></svg>
+      </div>
+      <div class="sec-header-text">
+        <div class="sec-marker">§ 02 &nbsp;Client Experience</div>
+        <h2 class="sec-title">Twenty-seven years <em>of the work.</em></h2>
+      </div>
+    </div>
+
+    <div class="xp-era">
+      <div class="xp-era-head">
+        <h3 class="xp-era-h"><span class="accent">Independent</span></h3>
+        <div class="xp-dates">2019 → Present</div>
+      </div>
+      <p class="xp-frame">Working directly with brands, and with the agencies and consultancies that serve them.</p>
+
+      <div class="xp-group">
+        <div class="xp-group-label">↳ Clients</div>
+        <div class="xp-names">
+          Walmart<span class="dot">·</span>Amazon<span class="dot">·</span>LEGO<span class="dot">·</span>BlackRock<span class="dot">·</span>PepsiCo<span class="dot">·</span>Mars Petcare<span class="dot">·</span>Pinterest<span class="dot">·</span>INEOS Automotive<span class="dot">·</span>EA<span class="dot">·</span>Fujifilm
+        </div>
+      </div>
+
+      <div class="xp-group">
+        <div class="xp-group-label">↳ Agencies</div>
+        <div class="xp-names">
+          Ogilvy<span class="dot">·</span>Walrus<span class="dot">·</span>Tombras<span class="dot">·</span>Preacher<span class="dot">·</span>Forsman &amp; Bodenfors<span class="dot">·</span>Pereira O'Dell<span class="dot">·</span>Carmichael Lynch<span class="dot">·</span>Hatch Design
+        </div>
+      </div>
+
+      <div class="xp-group">
+        <div class="xp-group-label">↳ Fellow consultancies</div>
+        <div class="xp-group-note">Specialist shops that bring me in for outside perspective on their client work.</div>
+        <div class="xp-names">
+          Eat Big Fish<span class="dot">·</span>Distillery<span class="dot">·</span>Been There Done That<span class="dot">·</span>Agents of Necessity
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-era">
+      <div class="xp-era-head">
+        <h3 class="xp-era-h">Before that: <span class="accent">BSSP</span></h3>
+        <div class="xp-dates">1999 → 2019</div>
+      </div>
+      <p class="xp-frame">Twenty years as CSO and Partner, growing Butler, Shine, Stern &amp; Partners from 25 people to 200. Named Adweek's Agency of the Decade and Ad Age's Small Agency of the Year.</p>
+
+      <div class="xp-group">
+        <div class="xp-group-label">↳ BSSP clients</div>
+        <div class="xp-names">
+          BMW/MINI<span class="dot">·</span>Nike/Converse<span class="dot">·</span>Apple<span class="dot">·</span>Sony<span class="dot">·</span>Priceline<span class="dot">·</span>Chipotle<span class="dot">·</span>Diageo<span class="dot">·</span>Hershey<span class="dot">·</span>Blue&nbsp;Shield&nbsp;of&nbsp;California<span class="dot">·</span>US&nbsp;Bank
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-cats">
+      <div class="xp-cats-label">Categories worked across</div>
+      <div class="xp-cats-list">
+        Retail · CPG · Automotive · Financial Services · Tech · Consumer Electronics · Gaming · Wellness · Healthcare · QSR · Beer &amp; Spirits · Footwear &amp; Apparel · Luxury Travel · Marketplaces · Imaging · Engineering &amp; Infrastructure
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHERE I CAN HELP ========== -->
+  <section class="sec-coral" id="help">
+    <div class="section-runhead">
+      <span><span class="section-runhead-name">Ed Cotton</span><span class="section-runhead-sep">·</span>Inverness Consulting</span>
+      <span class="section-runhead-right">§ 03</span>
+    </div>
+    <div class="sec-header">
+      <div class="sec-icon">
+        <svg><use href="#icon-walker"/></svg>
+      </div>
+      <div class="sec-header-text">
+        <div class="sec-marker">§ 03 &nbsp;Where I Can Help</div>
+        <h2 class="sec-title">Four kinds of <em>situation.</em></h2>
+        <p class="sec-deck">Different rooms, different jobs. Most engagements are some combination of these.</p>
+      </div>
+    </div>
+
+    <div class="eng-stack">
+      <div class="eng-item">
+        <div class="eng-icon-wrap">
+          <svg class="eng-icon"><use href="#icon-broken"/></svg>
+          <span class="eng-num">01 / Brand</span>
+        </div>
+        <div>
+          <h3 class="eng-h">Where's the brand <span class="key">going?</span></h3>
+          <p class="eng-p">The goal is always the same: uncover the fundamental truths about the brand, the category, and the consumer. Find the single-minded strategic thought that connects what consumers want with what the company provides. Sometimes brands are out of alignment and need to be put back in. Sometimes it's about finding a sharper way to express what the brand has done all along. The approach depends on time and what knowledge already exists, from workshop sprints with key stakeholders to conversations with brand advocates. It's amazing what can be accomplished with a few key people willing to make the time.</p>
+        </div>
+      </div>
+      <div class="eng-item">
+        <div class="eng-icon-wrap">
+          <svg class="eng-icon"><use href="#icon-clock"/></svg>
+          <span class="eng-num">02 / Pitch</span>
+        </div>
+        <div>
+          <h3 class="eng-h">When the pitch is in <span class="key">two weeks.</span></h3>
+          <p class="eng-p">I work with agencies at all stages of the pitch process, from developing a new business strategy to working out the final pitch deck. Sometimes that means working solo. Sometimes it means working with a strategy department or with the CSO directly. I've helped write the presentations others give, and I've been the one in the room pitching. I've also been the one who provides the initial stimulus on Day 1, bringing the agency team together to decide on the right strategic approach from the very start.</p>
+        </div>
+      </div>
+      <div class="eng-item">
+        <div class="eng-icon-wrap">
+          <svg class="eng-icon"><use href="#icon-sharpen"/></svg>
+          <span class="eng-num">03 / Team</span>
+        </div>
+        <div>
+          <h3 class="eng-h">When the strategy team needs <span class="key">sharpening.</span></h3>
+          <p class="eng-p">I've helped CSOs unlock their internal challenges. Organized workshops to galvanize teams. Helped leadership understand the barriers preventing the strategy department from doing its best work. And run workshops on the Future of the Strategy Department, and on going deeper on the things that matter.</p>
+        </div>
+      </div>
+      <div class="eng-item">
+        <div class="eng-icon-wrap">
+          <svg class="eng-icon"><use href="#icon-weathervane"/></svg>
+          <span class="eng-num">04 / Opportunity</span>
+        </div>
+        <div>
+          <h3 class="eng-h">When something is <span class="key">changing.</span></h3>
+          <p class="eng-p">A new technology, a shift in the category, a new audience emerging, an economic pattern that doesn't match the playbook anymore. The brand can feel the change but isn't sure what it means or what to do about it. The work is two parts. First, understanding what the opportunity actually is, by getting close to what's changing, listening to the people inside it, and reading the signals before they're obvious. Then, figuring out what the brand needs to do to take advantage of it. Sometimes that's a reframe of an existing position. Sometimes it's a new bet. Either way, the goal is to move while the opportunity is still real.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="eng-cta">
+      <p class="eng-cta-frame">If any of these sound like the room you're in, the easiest way to start is a <em>15-Minute Google Meet</em>.</p>
+      <a href="https://calendly.com/edcotton1/15-min-google-meet" class="eng-cta-button" target="_blank" rel="noopener">
+        Book a 15-Minute Google Meet
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== THE WORK / THOUGHT LEADERSHIP ========== -->
+  <section class="sec-cobalt" id="work">
+    <div class="section-runhead">
+      <span><span class="section-runhead-name">Ed Cotton</span><span class="section-runhead-sep">·</span>Inverness Consulting</span>
+      <span class="section-runhead-right">§ 04</span>
+    </div>
+    <div class="sec-header">
+      <div class="sec-icon">
+        <svg><use href="#icon-wheel"/></svg>
+      </div>
+      <div class="sec-header-text">
+        <div class="sec-marker">§ 04 &nbsp;Thought Leadership</div>
+        <h2 class="sec-title">Thinking in <em>beta.</em></h2>
+        <p class="sec-deck">Two newsletters, <em>Provoke</em> and <em>Hardwired</em>. A series of strategic investigations. And the <em>Inspiring Futures</em> podcast. Each one with a specific purpose.</p>
+      </div>
+    </div>
+
+    <div class="work-grid">
+
+      <a href="https://podcasts.apple.com/us/podcast/inspiring-futures-lessons-from-the-worlds-of/id1454526420" class="work-item work-feature" target="_blank">
+        <div class="work-head">
+          <span class="work-num">
+            <svg class="work-icon"><use href="#icon-mic"/></svg>
+            № 01 · Inspiring Futures · The Podcast
+          </span>
+          <span class="work-arrow">↗</span>
+        </div>
+        <div class="work-title"><em>Inspiring Futures.</em></div>
+        <div class="work-desc">The podcast. Seven years. 170 episodes. Long-form conversations with strategists, authors, creative leaders, brand marketers, and futurists. Past guests include David Aaker (Prophet), Rishad Tobaccowala (consultant, author), Greg Hahn (Mischief), Adam Morgan (eatbigfish), Ana Andjelic (The Sociology of Business), Bill Shea (Accenture Song), Kelsey Hodgkin (Special Group US), Dan Gardner (Code and Theory) and many more.</div>
+        <div class="work-tag">Podcast · 2019 — Present · 170 episodes</div>
+      </a>
+
+      <a href="https://ed542.substack.com/" class="work-item" target="_blank">
+        <div class="work-head">
+          <span class="work-num">
+            <svg class="work-icon"><use href="#icon-book"/></svg>
+            № 02 · Hardwired Newsletter
+          </span>
+          <span class="work-arrow">↗</span>
+        </div>
+        <div class="work-title"><em>Hardwired</em></div>
+        <div class="work-desc">An ongoing investigation into differentiation infrastructure. What companies actually do, at the level of how they are built, to protect what makes them different. Case studies on Hermès, Ferrari, MUJI, IKEA, and the systems that hold under pressure.</div>
+        <div class="work-tag">Newsletter · Active · 2026</div>
+      </a>
+
+      <a href="https://yearofstuck.vercel.app/" class="work-item" target="_blank">
+        <div class="work-head">
+          <span class="work-num">
+            <svg class="work-icon"><use href="#icon-book"/></svg>
+            № 03 · Year of Stuck
+          </span>
+          <span class="work-arrow">↗</span>
+        </div>
+        <div class="work-title">The <em>Year of Stuck</em></div>
+        <div class="work-desc">A field study of the holding-pattern economy from spring 2025 to spring 2026. Not recession, not recovery. A year in which conviction was rationed and expansion treated as reversible. For brands, this means the playbook of the last decade no longer applies. Growth assumptions need rewriting.</div>
+        <div class="work-tag">Field Dispatch · Spring 2025 — 2026</div>
+      </a>
+
+      <a href="https://ghost-iota-pied.vercel.app/" class="work-item" target="_blank">
+        <div class="work-head">
+          <span class="work-num">
+            <svg class="work-icon"><use href="#icon-book"/></svg>
+            № 04 · Running the Ghost
+          </span>
+          <span class="work-arrow">↗</span>
+        </div>
+        <div class="work-title">Running the <em>Ghost</em></div>
+        <div class="work-desc">A field dispatch on the K-shaped American economy and the vulnerable middle neither half can see. The mid-century script (one job, five promises, a stable ladder) has been severed. Society is still running its ghost. For marketers, this is the audience that's missing from every segmentation: the strivers wearing the costume of stability after the stage has started to buckle.</div>
+        <div class="work-tag">Field Dispatch · Vol. I · 2026</div>
+      </a>
+
+      <a href="https://authored-craft.vercel.app/" class="work-item" target="_blank">
+        <div class="work-head">
+          <span class="work-num">
+            <svg class="work-icon"><use href="#icon-book"/></svg>
+            № 05 · Creative Resistance
+          </span>
+          <span class="work-arrow">↗</span>
+        </div>
+        <div class="work-title">The Creative <em>Resistance</em></div>
+        <div class="work-desc">An exploration across 65 practitioners and 20 disciplines. Six decisions creative people make to keep work unmistakably their own when the culture wants it faster, bigger, and frictionless.</div>
+        <div class="work-tag">Investigation · 2025 — 2026</div>
+      </a>
+
+      <a href="https://greatreconfiguration.vercel.app/" class="work-item work-wide" target="_blank">
+        <div class="work-head">
+          <span class="work-num">
+            <svg class="work-icon"><use href="#icon-book"/></svg>
+            № 06 · Reconfiguration
+          </span>
+          <span class="work-arrow">↗</span>
+        </div>
+        <div class="work-title">The Great <em>Reconfiguration</em></div>
+        <div class="work-desc">A ten-step pathway for strategists trying to work out what's next. Drawing on Ibarra, Godin, Grant, Pennebaker, Granovetter, and Roger Martin.</div>
+        <div class="work-tag">Method · 2026</div>
+      </a>
+
+      <a href="https://sayless-steel.vercel.app/" class="work-item work-wide" target="_blank">
+        <div class="work-head">
+          <span class="work-num">
+            <svg class="work-icon"><use href="#icon-book"/></svg>
+            № 07 · Say Less
+          </span>
+          <span class="work-arrow">↗</span>
+        </div>
+        <div class="work-title"><em>Say Less. Mean Everything.</em></div>
+        <div class="work-desc">A scroll through the craft of compression. From Shakespeare's pit to the iPod launch to the 4chan post that became an A24 film. Why the strongest lines outlive every venue that made them, and what Orwell, Duarte, Musetto, Wieden and Cohen actually taught.</div>
+        <div class="work-tag">Essay · 2026</div>
+      </a>
+
+    </div>
+
+    <a href="https://www.linkedin.com/in/edward-cotton-93b535/recent-activity/all/" class="work-grid-outlink" target="_blank" rel="noopener">
+      LinkedIn Posts
+      <span class="arrow">↗</span>
+    </a>
+  </section>
+
+  <!-- ========== COMMUNITY ========== -->
+  <section class="sec-violet" id="community">
+    <div class="section-runhead">
+      <span><span class="section-runhead-name">Ed Cotton</span><span class="section-runhead-sep">·</span>Inverness Consulting</span>
+      <span class="section-runhead-right">§ 05</span>
+    </div>
+    <div class="sec-header">
+      <div class="sec-icon">
+        <svg><use href="#icon-campfire"/></svg>
+      </div>
+      <div class="sec-header-text">
+        <div class="sec-marker">§ 05 &nbsp;Strategy Community Development</div>
+        <h2 class="sec-title">Building the Strategy <em>Community.</em></h2>
+      </div>
+    </div>
+
+    <p class="community-frame">
+      For over a decade, I've held formal leadership roles in the strategy community. First as <a href="https://www.aaaa.org/" target="_blank" class="accent">Chair of the 4As Strategy Committee</a>, where I spent five years leading the Jay Chiat Awards and the committee's industry conferences and events. More recently as the founder of <strong>StratMonday</strong> and the convener of <strong>Camp Thrive</strong>.
+    </p>
+
+    <div class="community-grid">
+      <a href="https://stratmonday.substack.com/" class="community-card" target="_blank">
+        <div class="community-card-head">
+          <div class="community-card-tag">Weekly · 2024 — Present</div>
+          <span class="community-card-arrow">↗</span>
+        </div>
+        <svg class="community-card-icon"><use href="#icon-calendar"/></svg>
+        <h3><em>StratMonday</em></h3>
+        <div class="meta">2024 → Present</div>
+        <p>A 30-minute Monday meeting that serves as a gathering place for strategists to meet and learn. Recent conversations include knowledge graphs and insights into the life of strategists working client-side.</p>
+      </a>
+      <a href="https://www.mindsnaks.com/campthrive" class="community-card" target="_blank">
+        <div class="community-card-head">
+          <div class="community-card-tag">Annual · Virtual</div>
+          <span class="community-card-arrow">↗</span>
+        </div>
+        <svg class="community-card-icon"><use href="#icon-tent"/></svg>
+        <h3>Camp <em>Thrive 2026</em></h3>
+        <div class="meta">March 2, 2026 · 350 attendees</div>
+        <p>A one-day virtual working session held annually. The 2026 edition brought together 350 strategists from around the world. 21 speakers including Heidi Hackemer, Zoe Scaman (Bodacious), Gareth Kay (Coinbase), Michael Fanuele (Shake Shack), Ross Cidlowski (LEGO), Chuck Welch, Matt Hardisty and Matthew Knight. Three tracks: earning it, making the call, and making strategy work inside organizations.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-capture">
+      <div class="footer-capture-text">
+        <h3><em>Provoke</em> is a newsletter that explores issues and developments across brand, marketing and culture.</h3>
+      </div>
+      <a href="https://ecotton.substack.com/" class="footer-capture-cta" target="_blank" rel="noopener">
+        Subscribe to Provoke
+        <span class="arrow">→</span>
+      </a>
+    </div>
+    <div class="footer-meta">
+      <div>© Ed Cotton · Inverness Consulting LLC</div>
+      <div class="right">
+        <span>Brooklyn, NY</span>
+        <a href="https://www.linkedin.com/in/edward-cotton-93b535/" target="_blank">LinkedIn ↗</a>
+        <a href="https://ecotton.substack.com/" target="_blank">Provoke ↗</a>
+        <a href="https://ed542.substack.com/" target="_blank">Hardwired ↗</a>
+        <a href="https://stratmonday.substack.com/" target="_blank">StratMonday ↗</a>
+        <a href="/cdn-cgi/l/email-protection#6603022603020509121209084805090b">Email ↗</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Vercel Web Analytics — page views, top pages, referrers, countries -->
+<script data-cfasync="false" src="/c
